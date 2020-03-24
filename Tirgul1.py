@@ -14,7 +14,10 @@ print(a[:2])  ##[1,2] slice -->:<-- if empty from start to end.
 print(a[-1])  ## [4] prints from last
 print(a[-2])  ## [3]
 
+
 print('-------')
+
+
 
 A = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [11, 22, 33, 44]])
 B = np.array([[1, 2, 3], [5, 6, 7], [11, 22, 33], [8, 6, 3]])
@@ -58,22 +61,20 @@ img = cv2.imread('sample_image.jpg')  ## reading the image
 ##cv2.imshow('Corona_Beer',img) ## representing the image in GUI (title, image)
 ##cv2.waitKey(0)
 ##cv2.imsave('sample_image.jpg',img) ## saving the img
-cv2.imshow('sample_image.jpg',img[:,:,0]) ## in cv2 the colors are B,G,R instead of R,G,B , there is an option to convert.
-cv2.waitKey(0)
+# cv2.imshow('sample_image.jpg',img[:,:,0]) ## in cv2 the colors are B,G,R instead of R,G,B , there is an option to convert.
+# cv2.waitKey(0)
 img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB) ## for converting from B,G,R to R,G,B
 
 
 ## another way , even better way - Matplotlib
 plt.imshow(img)
-plt.show()
 
-## some plot functions
-plt.plot(155,22,'*') # for a point
-plt.show()
-x = np.random.randint(0,500,(10,2))
+# ## some plot functions
+plt.plot(155,80,'*') # for a point
+x = np.random.randint(0,500,(10,2)) ## generate random numbbers between 0-500 and then put them in 10 lists of 2(list of lists)
 plt.plot(x[:,0],x[:,1],'*') ## for alot of points
+plt.plot(x[:,0],x[:,1],'-*') # use ‘-’ for lines , connects the points
 plt.show()
-plt.plot(x[:,0],x[:,1],'-*') # use ‘-’ for lines
 
 plt.matshow(A) ## disply the image in a matrix.
 plt.colorbar()
